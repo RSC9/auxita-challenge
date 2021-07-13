@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Game of life Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ./index.js localhost 3080",
+    "dev": "nodemon ./server.js localhost 3080"
+  },
+  "author": "Raúl Santa Cruz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "nodemon": "^2.0.4"
+  }
+}

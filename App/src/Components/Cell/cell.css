@@ -1,0 +1,15 @@
+.Alive {
+    width: 11px;
+    height: 11px;
+    border : 1px solid grey;
+    background-color: rgb(41, 196, 123);
+    margin: 2px;
+}
+
+.Dead {
+    width: 11px;
+    height: 11px;
+    border : 1px solid grey;
+    background-color: transparent;
+    margin: 2px;
+}
