@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { DatePicker } from 'antd'
 import { getHypertension } from '../../Services/HypertensionService';
 
 const HypertensionCalculator = (props) => {
@@ -15,7 +16,9 @@ const HypertensionCalculator = (props) => {
     })
 
     return (
-        <div>+VESFLIP+</div>
+        <div>+VESFLIP+
+            <DatePicker />
+        </div>
     );
 };
 
