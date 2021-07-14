@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import Universe from './Components/Universe/universe';
-import HypertensionCalculator from './Components/Hypertension/hypertensionCalculator';
+import HypertensionCalculator from './Containers/HypertensionCalculator';
 
 class App extends Component {
 

@@ -7,7 +7,7 @@ const HypertensionRecords = (props) => {
 
 
     return (
-        <Table dataSource={hypertensionReadings} columns={hypertensionColumns} />
+        <Table rowKey={record => `${record.SysBP}${record.DiaBP}${record.atDate}`} dataSource={hypertensionReadings} columns={hypertensionColumns} />
     );
 };
 
