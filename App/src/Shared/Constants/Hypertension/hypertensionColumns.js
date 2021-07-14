@@ -1,11 +1,11 @@
 const columns = [
     {
-        title: 'Systolic Blood Pressure',
+        title: 'Systolic Blood Pressure (SysBP)',
         dataIndex: 'SysBP',
         key: 'SysBP'
     },
     {
-        title: 'Diastolic Blood Pressure',
+        title: 'Diastolic Blood Pressure (DiaBP)',
         dataIndex: 'DiaBP',
         key: 'DiaBP'
     },

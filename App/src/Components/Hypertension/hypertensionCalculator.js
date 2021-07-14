@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import HypertensionInputs from './hypertensionInputs';
 import HypertensionRecords from './hypertensionRecords';
 import { getHypertension } from '../../Services/HypertensionService';
 
@@ -14,12 +15,13 @@ const HypertensionCalculator = (props) => {
 
     useEffect(() => {
         fetchHypertension();        
-    })
+    }, [])
 
     return (
-        <div>+VESFLIP+
-            <HypertensionRecords hypertensionReadings={hypertensionReadings}  />
-        </div>
+        <React.Fragment>+VESFLIP+
+            <HypertensionInputs />
+            <HypertensionRecords hypertensionReadings={hypertensionReadings} />
+        </React.Fragment>
     );
 };
 
