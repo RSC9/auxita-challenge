@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import HypertensionInputs from '../../Components/Hypertension/hypertensionInputs';
 import HypertensionRecords from '../../Components/Hypertension/hypertensionRecords';
 import { getHypertension, addHypertensionReading } from '../../Services/HypertensionService';
+import { sortObjectArrayByDate } from '../../Shared/Helpers/arrays';
 
 const HypertensionCalculator = (props) => {
     const [ hypertensionReadings, sethypertensionReadings ] = React.useState([]);
@@ -20,9 +21,12 @@ const HypertensionCalculator = (props) => {
 
     async function fetchHypertension() {
         const hypertension = await getHypertension();
+        const sortedHypertension = sortObjectArrayByDate(hypertension);
 
         console.log('+VESFLIP+', hypertension);
-        sethypertensionReadings(hypertension);
+        //sethypertensionReadings(hypertension);
+        sethypertensionReadings(sortedHypertension);
+        
     }
 
     useEffect(() => {
