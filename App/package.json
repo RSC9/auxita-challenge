@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^4.16.7",
+    "moment": "^2.29.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
