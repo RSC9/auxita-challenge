@@ -19,8 +19,13 @@ app.get('/api/hypertension', (req, res) => {
     res.json(hypertension)
 });
 
+app.post('/api/hypertension/add', (req, res) => {
+    hypertension.push(req.body.hypertensionReading);
+    res.json(req.body.hypertensionReading)
+});
+
 app.get('/', (req,res) => {
-    res.send('Game of life Server');
+    res.send('Auxita Server');
 });
 
 play = () => {

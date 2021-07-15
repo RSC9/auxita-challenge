@@ -1,14 +1,21 @@
 import React, { useEffect } from 'react';
 import HypertensionInputs from '../../Components/Hypertension/hypertensionInputs';
 import HypertensionRecords from '../../Components/Hypertension/hypertensionRecords';
-import { getHypertension } from '../../Services/HypertensionService';
+import { getHypertension, addHypertensionReading } from '../../Services/HypertensionService';
 
 const HypertensionCalculator = (props) => {
     const [ hypertensionReadings, sethypertensionReadings ] = React.useState([]);
 
-    const addHypertensionReading = (props) => {
+    async function addReading(reading) {
         console.log('+addHypertensionReading+', props);
 
+        const newReading = {
+            SysBP: reading.SysBP,
+            DiaBP: reading.DiaBP,
+            atDate: reading.atDate
+        };
+
+        sethypertensionReadings([...hypertensionReadings, await addHypertensionReading(newReading)]);
     };
 
     async function fetchHypertension() {
@@ -24,7 +31,7 @@ const HypertensionCalculator = (props) => {
 
     return (
         <React.Fragment>+VESFLIP+
-            <HypertensionInputs addHypertensionReading={addHypertensionReading} />
+            <HypertensionInputs addReading={addReading} />
             <HypertensionRecords hypertensionReadings={hypertensionReadings} />
         </React.Fragment>
     );

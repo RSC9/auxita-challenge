@@ -4,7 +4,7 @@ import moment from 'moment';
 import { defaultDateFormat } from '../../Shared/Constants/dateFormats';
 
 const HypertensionInputs = (props) => {
-    const { addHypertensionReading } = props;
+    const { addReading } = props;
 
     const [SysBP, setSysBP] = useState('');
     const [DiaBP, setDiaBP] = useState('');
@@ -13,7 +13,7 @@ const HypertensionInputs = (props) => {
     return (
         <Form
             layout="inline"
-            onFinish={() => addHypertensionReading({ SysBP, DiaBP, atDate })}
+            onFinish={() => addReading({ SysBP, DiaBP, atDate })}
         >
             <Form.Item label="SysBP">
                 <InputNumber value={SysBP} onChange={(numberValue) => setSysBP(numberValue)} />
@@ -22,7 +22,7 @@ const HypertensionInputs = (props) => {
                 <InputNumber value={DiaBP} onChange={(numberValue) => setDiaBP(numberValue)} />
             </Form.Item>
             <Form.Item label="Date">
-                <DatePicker defaultValue={atDate} format={defaultDateFormat} onChange={(momentDate) => setAtDate(momentDate)} />
+                <DatePicker defaultValue={atDate} format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
             </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit">
