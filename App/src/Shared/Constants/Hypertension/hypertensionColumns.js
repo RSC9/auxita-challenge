@@ -1,3 +1,7 @@
+import React from 'react';
+import { Tag } from 'antd';
+import { classificateBloodPressure } from '../../Helpers/Hypertension/classifications';
+
 const columns = [
     {
         title: 'Systolic Blood Pressure (SysBP)',
@@ -13,6 +17,19 @@ const columns = [
         title: 'Date',
         dataIndex: 'atDate',
         key: 'atDate'
+    },
+    {
+        title: 'BP Classification',
+        key: 'bpClassification',
+        render: (text, record) => {
+            const classification = classificateBloodPressure(record);
+
+            return (
+                <Tag color={classification.color}>
+                   {classification.text} 
+                </Tag>
+            );
+        }
     }
 ];
 
