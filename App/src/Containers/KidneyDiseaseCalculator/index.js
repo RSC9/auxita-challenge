@@ -9,14 +9,15 @@ const KidenyDiseaseCalculator = (props) => {
 
     async function addReading(reading) {
         console.log('+addKidneyDiseaseReading+', reading);
-
         const newReading = {
             eGFR: reading.eGFR,
             atDate: reading.atDate
 
         };
+        const kidneyDisease = [...kidneyDiseaseReadings, await addKidneyDiseaseReading(newReading)];
+        const sortedKidneyDisease = sortObjectArrayByDate(kidneyDisease);
 
-        setKidneyDiseaseReadings([...kidneyDiseaseReadings, await addKidneyDiseaseReading(newReading)]);
+        setKidneyDiseaseReadings(sortedKidneyDisease);
     };
 
     async function fetchKidneyDisease() {

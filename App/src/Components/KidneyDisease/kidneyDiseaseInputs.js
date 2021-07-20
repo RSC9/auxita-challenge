@@ -8,7 +8,7 @@ const KidenyDiseaseInputs = (props) => {
     const { addReading } = props;
 
     const [eGFR, seteGFR] = useState('');
-    const [atDate, setAtDate] = useState(moment());
+    const [atDate, setAtDate] = useState();
 
     return (
         <Form
@@ -19,7 +19,7 @@ const KidenyDiseaseInputs = (props) => {
                 <InputNumber value={eGFR} onChange={(numberValue => seteGFR(numberValue))} />
             </Form.Item>
             <Form.Item label="Date">
-                <DatePicker defaultValue={atDate} format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
+                <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
             </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit">
