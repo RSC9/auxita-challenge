@@ -6,6 +6,7 @@ const Game = require('./Domain/Game');
 const game = new Game(50, 20);
 
 let hypertension = require('./Domain/Hypertension');
+let kidneyDisease = require('./Domain/KidneyDisease');
 
 let universe = [];
 
@@ -26,6 +27,10 @@ app.post('/api/hypertension/add', (req, res) => {
 
 app.get('/', (req,res) => {
     res.send('Auxita Server');
+});
+
+app.get('/api/kidneyDisease', (req, res) => {
+    res.json(kidneyDisease)
 });
 
 play = () => {

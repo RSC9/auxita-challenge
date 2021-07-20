@@ -5,7 +5,7 @@ import { getHypertension, addHypertensionReading } from '../../Services/Hyperten
 import { sortObjectArrayByDate } from '../../Shared/Helpers/arrays';
 
 const HypertensionCalculator = (props) => {
-    const [ hypertensionReadings, sethypertensionReadings ] = React.useState([]);
+    const [hypertensionReadings, sethypertensionReadings] = React.useState([]);
 
     async function addReading(reading) {
         console.log('+addHypertensionReading+', props);
