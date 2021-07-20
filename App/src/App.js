@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import Universe from './Components/Universe/universe';
 import HypertensionCalculator from './Containers/HypertensionCalculator';
+import KidenyDiseaseCalculator from './Containers/KidneyDiseaseCalculator';
 
 class App extends Component {
 
@@ -10,6 +11,7 @@ class App extends Component {
       <React.Fragment>
         <h1>Auxita</h1>
         <HypertensionCalculator />
+        <KidenyDiseaseCalculator />
       </React.Fragment>
     );
   }
