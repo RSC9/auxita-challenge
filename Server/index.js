@@ -6,7 +6,7 @@ const Game = require('./Domain/Game');
 const game = new Game(50, 20);
 
 let hypertension = require('./Domain/Hypertension');
-let kidneyDisease = require('./Domain/KidneyDisease');
+let { kidneyDisease, idKidneyDisease } = require('./Domain/KidneyDisease');
 
 let universe = [];
 
@@ -17,12 +17,12 @@ app.get('/api/universe', (req, res) => {
 });
 
 app.get('/api/hypertension', (req, res) => {
-    res.json(hypertension)
+    res.json(hypertension);
 });
 
 app.post('/api/hypertension/add', (req, res) => {
     hypertension.push(req.body.hypertensionReading);
-    res.json(req.body.hypertensionReading)
+    res.json(req.body.hypertensionReading);
 });
 
 app.get('/', (req,res) => {
@@ -30,7 +30,17 @@ app.get('/', (req,res) => {
 });
 
 app.get('/api/kidneyDisease', (req, res) => {
-    res.json(kidneyDisease)
+    res.json(kidneyDisease);
+});
+
+app.post('/api/kidneyDisease/add', (req, res) => {
+    const newRecord = {
+        id: idKidneyDisease++,
+        ...req.body.kidneyDiseaseReading
+    };
+    console.log('+VESFLIP+', newRecord);
+    kidneyDisease.push(newRecord);
+    res.json(newRecord);
 });
 
 play = () => {

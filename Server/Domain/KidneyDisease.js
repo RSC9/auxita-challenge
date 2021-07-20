@@ -5,4 +5,7 @@ let kidneyDiseaseReadings = [
     { id: id++, eGFR: 70, atDate: '2018/10/20'}
 ];
 
-module.exports = kidneyDiseaseReadings;
+module.exports = {
+    kidneyDisease: kidneyDiseaseReadings,
+    idKidneyDisease: id
+};

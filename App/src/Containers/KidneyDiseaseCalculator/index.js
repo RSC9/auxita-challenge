@@ -1,15 +1,22 @@
 import React, { useEffect } from 'react';
 import KidenyDiseaseInputs from '../../Components/KidneyDisease/kidneyDiseaseInputs';
 import KidneyDiseaseRecords from '../../Components/KidneyDisease/kidneyDiseaseRecords';
-import { getKidneyDisease } from '../../Services/KidneyDiseaseService';
+import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
 import { sortObjectArrayByDate } from '../../Shared/Helpers/arrays';
 
 const KidenyDiseaseCalculator = (props) => {
     const [kidneyDiseaseReadings, setKidneyDiseaseReadings] = React.useState([]);
 
     async function addReading(reading) {
-        console.log('+addKidneyDiseaseReading+', props);
+        console.log('+addKidneyDiseaseReading+', reading);
 
+        const newReading = {
+            eGFR: reading.eGFR,
+            atDate: reading.atDate
+
+        };
+
+        setKidneyDiseaseReadings([...kidneyDiseaseReadings, await addKidneyDiseaseReading(newReading)]);
     };
 
     async function fetchKidneyDisease() {

@@ -8,7 +8,7 @@ const columns = [
         title: 'Date',
         dataIndex: 'atDate',
         key: 'atDate'
-    },
+    }
 ];
 
 export default columns;
