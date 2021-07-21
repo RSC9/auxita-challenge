@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
-import kidneyDiseaseColumns from '../../Shared/Constants/KidneyDisease/kidneyDiseaseColumns';
+import kidneyDiseaseColumns, { consecutiveseGFRColumns } from '../../Shared/Constants/KidneyDisease/kidneyDiseaseColumns';
 import { getTwoConsecutiveItems } from '../../Shared/Helpers/arrays';
 
 const KidneyDiseaseRecords = (props) => {
@@ -11,7 +11,7 @@ const KidneyDiseaseRecords = (props) => {
         const data = getTwoConsecutiveItems(currentItem, kidneyDiseaseReadings);
 
         return (
-            <Table rowKey={record => record.id} columns={kidneyDiseaseColumns} dataSource={data} pagination={false} size="small" />
+            <Table rowKey={record => record.id} columns={consecutiveseGFRColumns} dataSource={data} pagination={false} size="small" />
         );
     };
 
