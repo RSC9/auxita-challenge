@@ -24,4 +24,21 @@ export const consecutiveseGFRColumns = [
     }
 ];
 
+export const consecutiveseGFRColumnsVesflip = {
+    twoConsecutiveReadings: {
+        title: 'Two consecutives eGFR readings',
+        dataIndex: 'eGFR',
+        key: 'eGFR'
+    },
+    atDate: {
+        title: 'Date',
+        dataIndex: 'atDate',
+        key: 'atDate'
+    },
+    eGFRClassification: {
+        title: 'eGFR Classifciation',
+        key: 'eGFRClassification'
+    }
+};
+
 export default columns;
