@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import KidenyDiseaseInputs from '../../Components/KidneyDisease/kidneyDiseaseInputs';
 import KidneyDiseaseRecords from '../../Components/KidneyDisease/kidneyDiseaseRecords';
 import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
-import { sortObjectArrayByDate } from '../../Shared/Helpers/arrays';
+import { sortObjectArrayByDate } from '../../Shared/Util/arrays';
 
 const KidenyDiseaseCalculator = (props) => {
     const [kidneyDiseaseReadings, setKidneyDiseaseReadings] = React.useState([]);

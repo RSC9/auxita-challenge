@@ -1,3 +1,7 @@
+import React from 'react';
+import { Tag } from 'antd';
+import { classificateGlomerularFiltration } from '../../Helpers/KidneyDisease/classifications';
+
 const columns = [
     {
         title: 'Estimated Glomerular Filtration Rate (eGFR)',
@@ -8,6 +12,19 @@ const columns = [
         title: 'Date',
         dataIndex: 'atDate',
         key: 'atDate'
+    },
+    {
+        title: 'Classification',
+        dataIndex: 'classification',
+        render: (text, record) => {
+            const classification = classificateGlomerularFiltration(record.eGFR);
+
+            return (
+                <Tag color={classification.color}>
+                   {classification.text} 
+                </Tag>
+            );
+        }
     }
 ];
 

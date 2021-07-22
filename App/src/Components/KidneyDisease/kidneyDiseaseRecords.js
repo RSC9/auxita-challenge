@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'antd';
 import kidneyDiseaseColumns, { consecutiveseGFRColumns, consecutiveseGFRColumnsVesflip } from '../../Shared/Constants/KidneyDisease/kidneyDiseaseColumns';
-import { getTwoConsecutiveItems } from '../../Shared/Helpers/arrays';
+import { getTwoConsecutiveItems } from '../../Shared/Util/arrays';
 
 const { Column } = Table;
 
@@ -24,7 +24,7 @@ const KidneyDiseaseRecords = (props) => {
 
 
         return (
-            <Table dataSource={data} rowKey={record => record.id} size="small">
+            <Table dataSource={data} rowKey={record => record.id} pagination={false} size="small">
                 <Column 
                     title={consecutiveseGFRColumnsVesflip.twoConsecutiveReadings.title}
                     dataIndex={consecutiveseGFRColumnsVesflip.twoConsecutiveReadings.dataIndex}

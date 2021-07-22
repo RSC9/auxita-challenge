@@ -15,10 +15,10 @@ const KidenyDiseaseInputs = (props) => {
             layout="inline"
             onFinish={() => addReading({ eGFR, atDate })}
         >
-            <Form.Item label="eGFR">
+            <Form.Item name="eGFR" label="eGFR" rules={[{ required: true, message: 'Please input a eGFR.' }]}>
                 <InputNumber value={eGFR} onChange={(numberValue => seteGFR(numberValue))} />
             </Form.Item>
-            <Form.Item label="Date">
+            <Form.Item label="Date" name="atDate" rules={[{ required: true, message: 'Please input a Date.' }]}>
                 <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
             </Form.Item>
             <Form.Item>
