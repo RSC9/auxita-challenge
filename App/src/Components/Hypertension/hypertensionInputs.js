@@ -18,7 +18,7 @@ const HypertensionInputs = (props) => {
                 <InputNumber onChange={(numberValue) => setSysBP(numberValue)} />
             </Form.Item>
             <Form.Item label="DiaBP" name="DiaBP" rules={[{ required: true, message: 'Please input a DiaBP.' }]}>
-                <InputNumber value={DiaBP} onChange={(numberValue) => setDiaBP(numberValue)} />
+                <InputNumber onChange={(numberValue) => setDiaBP(numberValue)} />
             </Form.Item>
             <Form.Item label="Date" name="atDate" rules={[{ required: true, message: 'Please input a Date.' }]}>
                 <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
