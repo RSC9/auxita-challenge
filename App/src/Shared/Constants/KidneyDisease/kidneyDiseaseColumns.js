@@ -36,7 +36,7 @@ export const consecutiveseGFRColumnsVesflip = {
         key: 'atDate'
     },
     eGFRClassification: {
-        title: 'eGFR Classifciation',
+        title: 'eGFR Classification',
         key: 'eGFRClassification'
     }
 };

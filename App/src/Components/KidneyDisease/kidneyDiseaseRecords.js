@@ -42,10 +42,22 @@ const KidneyDiseaseRecords = (props) => {
                         console.log('`+Lord I need YOU+`', reading);
                         console.log('`+ThanksGOD+`', a);
 
-                        const res = (a.eGFR * 100) / (reading.eGFR);
+                        // const res = 100 - ((a.eGFR * 100) / reading.eGFR);
+                        //const res = ((a.eGFR * 100) / reading.eGFR) - 100;
+                        const originalAmount = reading.eGFR;
+                        let vesflip;
+                        if (reading.eGFR > a.eGFR) {
+                            const decreaseQuantity = reading.eGFR - a.eGFR;
+                            
+                            vesflip = (decreaseQuantity / originalAmount) * 100;                       
+                        } else {
+                            const increaseQuantity = a.eGFR - reading.eGFR;
+
+                            vesflip = (increaseQuantity / originalAmount) * 100;
+                        }
 
                         return (
-                            <div>+VESFLIP+{res}</div>
+                            <div>+VESFLIP+{vesflip}</div>
                         );
                     }}
                 />
