@@ -9,14 +9,15 @@ const HypertensionCalculator = (props) => {
 
     async function addReading(reading) {
         console.log('+addHypertensionReading+', props);
-
         const newReading = {
             SysBP: reading.SysBP,
             DiaBP: reading.DiaBP,
             atDate: reading.atDate
         };
+        const hypertension = [...hypertensionReadings, await addHypertensionReading(newReading)];
+        const sortedHypertension = sortObjectArrayByDate(hypertension);
 
-        sethypertensionReadings([...hypertensionReadings, await addHypertensionReading(newReading)]);
+        sethypertensionReadings(sortedHypertension);
     };
 
     async function fetchHypertension() {
