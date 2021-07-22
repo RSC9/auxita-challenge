@@ -1,6 +1,5 @@
 import React,  { useState } from 'react';
 import { Form, InputNumber, DatePicker, Button } from 'antd';
-import moment from 'moment';
 import { defaultDateFormat } from '../../Shared/Constants/dateFormats';
 
 const HypertensionInputs = (props) => {

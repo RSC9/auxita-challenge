@@ -1,3 +1,6 @@
+import React from 'react';
+import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+
 export const classificateGlomerularFiltration = (eGFR) => {
     if (eGFR >= 90) {
         return {
@@ -24,4 +27,24 @@ export const classificateGlomerularFiltration = (eGFR) => {
             text: 'Kidney Failure', color: 'red'
         };
     }
+};
+
+export const geteGFRPercentChange = (eGFRInitial, eGFRFinal) => {
+    if (eGFRInitial > eGFRFinal) {
+        const decrease = eGFRInitial - eGFRFinal;
+        const percentage = (decrease / eGFRInitial) * 100;
+
+        return { title: 'Decrease', value: percentage, preffix: <ArrowDownOutlined /> }
+    } else if (eGFRInitial < eGFRFinal) {
+        const increase = eGFRFinal - eGFRInitial;
+        const percentage = (increase / eGFRInitial) * 100;
+        
+        return { title: 'Increase', value: percentage, preffix: <ArrowUpOutlined /> }
+    }
+
+    return {
+        title: 'No change',
+        value: 0,
+        preffix: null
+    };
 };
