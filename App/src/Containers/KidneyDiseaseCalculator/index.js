@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { PageHeader } from 'antd';
 import KidenyDiseaseInputs from '../../Components/KidneyDisease/kidneyDiseaseInputs';
 import KidneyDiseaseRecords from '../../Components/KidneyDisease/kidneyDiseaseRecords';
 import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
@@ -34,7 +35,12 @@ const KidenyDiseaseCalculator = (props) => {
 
     return (
         <React.Fragment>+GOD+
-            <KidenyDiseaseInputs addReading={addReading} />
+            <PageHeader
+                title="Kidney Disease calculator"
+                subTitle="This is a subtitle"
+            >
+                <KidenyDiseaseInputs addReading={addReading} />
+            </PageHeader>
             <KidneyDiseaseRecords kidneyDiseaseReadings={kidneyDiseaseReadings} />
         </React.Fragment>
     );
