@@ -10,7 +10,6 @@ const KidenyDiseaseCalculator = (props) => {
     const [kidneyDiseaseReadings, setKidneyDiseaseReadings] = React.useState([]);
 
     async function addReading(reading) {
-        console.log('+addKidneyDiseaseReading+', reading);
         const newReading = {
             eGFR: reading.eGFR,
             atDate: reading.atDate
@@ -24,7 +23,6 @@ const KidenyDiseaseCalculator = (props) => {
 
     async function fetchKidneyDisease() {
         const kidneyDisease = await getKidneyDisease();
-        console.log('`+VESFLIP+`', kidneyDisease);
         const sortedKidneyDisease = sortObjectArrayByDate(kidneyDisease);
 
         setKidneyDiseaseReadings(sortedKidneyDisease);
@@ -35,7 +33,7 @@ const KidenyDiseaseCalculator = (props) => {
     }, [])
 
     return (
-        <React.Fragment>+GOD+
+        <React.Fragment>
             <div className="pageHeader-wrapper">
                 <PageHeader
                     title="Kidney Disease calculator"

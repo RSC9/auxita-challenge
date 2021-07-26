@@ -10,7 +10,6 @@ const HypertensionCalculator = (props) => {
     const [hypertensionReadings, sethypertensionReadings] = React.useState([]);
 
     async function addReading(reading) {
-        console.log('+addHypertensionReading+', props);
         const newReading = {
             SysBP: reading.SysBP,
             DiaBP: reading.DiaBP,
@@ -26,8 +25,6 @@ const HypertensionCalculator = (props) => {
         const hypertension = await getHypertension();
         const sortedHypertension = sortObjectArrayByDate(hypertension);
 
-        console.log('+VESFLIP+', hypertension);
-        //sethypertensionReadings(hypertension);
         sethypertensionReadings(sortedHypertension);
         
     }
@@ -37,7 +34,7 @@ const HypertensionCalculator = (props) => {
     }, [])
 
     return (
-        <React.Fragment>+VESFLIP+
+        <React.Fragment>
             <div className="pageHeader-wrapper">
                 <PageHeader
                     title="Hypertension calculator"

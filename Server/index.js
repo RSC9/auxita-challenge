@@ -25,7 +25,7 @@ app.post('/api/hypertension/add', (req, res) => {
         id: idHypertension++,
         ...req.body.hypertensionReading
     };
-    console.log('+VESFLIP+', newRecord);
+    
     hypertension.push(newRecord);
     res.json(newRecord);
 });
@@ -43,7 +43,7 @@ app.post('/api/kidneyDisease/add', (req, res) => {
         id: idKidneyDisease++,
         ...req.body.kidneyDiseaseReading
     };
-    console.log('+VESFLIP+', newRecord);
+    
     kidneyDisease.push(newRecord);
     res.json(newRecord);
 });
