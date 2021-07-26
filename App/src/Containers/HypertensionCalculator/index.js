@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../../Shared/Styles/calculators.css';
 import { PageHeader } from 'antd';
 import HypertensionInputs from '../../Components/Hypertension/hypertensionInputs';
 import HypertensionRecords from '../../Components/Hypertension/hypertensionRecords';
@@ -37,13 +38,14 @@ const HypertensionCalculator = (props) => {
 
     return (
         <React.Fragment>+VESFLIP+
-            <PageHeader
-                title="Hypertension calculator"
-                subTitle="This is a subtitle"
-            >
-                <HypertensionInputs addReading={addReading} />                
-            </PageHeader>
-            <HypertensionRecords hypertensionReadings={hypertensionReadings} />
+            <div className="pageHeader-wrapper">
+                <PageHeader
+                    title="Hypertension calculator"
+                >
+                    <HypertensionInputs addReading={addReading} />                
+                </PageHeader>
+                <HypertensionRecords hypertensionReadings={hypertensionReadings} />
+            </div>
         </React.Fragment>
     );
 };
