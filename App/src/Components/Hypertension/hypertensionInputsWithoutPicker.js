@@ -1,13 +1,11 @@
 import React,  { useState } from 'react';
 import { Form, InputNumber, DatePicker, Button } from 'antd';
-import { defaultDateFormat } from '../../Shared/Constants/dateFormats';
 
-const HypertensionInputs = (props) => {
+const HypertensionInputsWithoutPicker = (props) => {
     const { addReading } = props;
 
     const [SysBP, setSysBP] = useState('');
     const [DiaBP, setDiaBP] = useState('');
-    const [atDate, setAtDate] = useState();
 
     return (
         <Form
@@ -20,9 +18,6 @@ const HypertensionInputs = (props) => {
             <Form.Item label="DiaBP" name="DiaBP" rules={[{ required: true, message: 'Please input a DiaBP.' }]}>
                 <InputNumber onChange={(numberValue) => setDiaBP(numberValue)} />
             </Form.Item>
-            <Form.Item label="Date" name="atDate" rules={[{ required: true, message: 'Please input a Date.' }]}>
-                <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
-            </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit">
                     Add
@@ -33,4 +28,4 @@ const HypertensionInputs = (props) => {
 
 };
 
-export default HypertensionInputs;
+export default HypertensionInputsWithoutPicker;

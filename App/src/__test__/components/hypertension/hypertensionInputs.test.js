@@ -2,12 +2,12 @@ import 'jsdom-global/register'; //at the top of file , even  , before importing 
 import '../../../__mocks__/matchMedia.mock';
 import React from 'react';
 import { mount } from 'enzyme';
-import HypertensionInputs from '../../../Components/Hypertension/hypertensionInputs';
+import HypertensionInputsWithoutPicker from '../../../Components/Hypertension/hypertensionInputsWithoutPicker';
 
-describe('<HypertensionInputs />', () => {
-    const hypertensionInputs = mount(<HypertensionInputs />);
+describe('<HypertensionInputsWithoutPicker />', () => {
+    const hypertensionInputs = mount(<HypertensionInputsWithoutPicker />);
 
-    test('Render of HypertensionInputs component', () => {
+    test('Render of HypertensionInputsWithoutPicker component', () => {
 
         expect(hypertensionInputs.length).toEqual(1);
     });
