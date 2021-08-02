@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../../Shared/Styles/calculators.css';
-import { PageHeader } from 'antd';
+import CalculatorHeader from '../../Shared/Components/calculatorHeader';
 import KidenyDiseaseInputs from '../../Components/KidneyDisease/kidneyDiseaseInputs';
 import KidneyDiseaseRecords from '../../Components/KidneyDisease/kidneyDiseaseRecords';
 import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
@@ -35,11 +35,10 @@ const KidenyDiseaseCalculator = (props) => {
     return (
         <React.Fragment>
             <div className="pageHeader-wrapper">
-                <PageHeader
+                <CalculatorHeader
                     title="Kidney Disease calculator"
-                >
-                    <KidenyDiseaseInputs addReading={addReading} />
-                </PageHeader>
+                    children={<KidenyDiseaseInputs addReading={addReading} />}
+                />
                 <KidneyDiseaseRecords kidneyDiseaseReadings={kidneyDiseaseReadings} />
             </div>
         </React.Fragment>

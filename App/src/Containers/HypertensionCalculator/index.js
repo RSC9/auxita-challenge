@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../../Shared/Styles/calculators.css';
-import { PageHeader } from 'antd';
+import CalculatorHeader from '../../Shared/Components/calculatorHeader';
 import HypertensionInputs from '../../Components/Hypertension/hypertensionInputs';
 import HypertensionRecords from '../../Components/Hypertension/hypertensionRecords';
 import { getHypertension, addHypertensionReading } from '../../Services/HypertensionService';
@@ -36,11 +36,10 @@ const HypertensionCalculator = (props) => {
     return (
         <React.Fragment>
             <div className="pageHeader-wrapper">
-                <PageHeader
+                <CalculatorHeader
                     title="Hypertension calculator"
-                >
-                    <HypertensionInputs addReading={addReading} />                
-                </PageHeader>
+                    children={<HypertensionInputs addReading={addReading} />}
+                />
                 <HypertensionRecords hypertensionReadings={hypertensionReadings} />
             </div>
         </React.Fragment>

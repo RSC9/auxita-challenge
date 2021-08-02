@@ -11,4 +11,8 @@ describe('<KidneyDiseaseCalculator />', () => {
     test('Render of KidneyDiseaseCalculator container', () => {
         expect(kidneyDiseaseCalculator.length).toEqual(1);
     });
+
+    test('Render of title', () => {
+        expect(kidneyDiseaseCalculator.find(".ant-page-header-heading-title").text()).toEqual("Hypertension calculatorS")
+    });
 });
