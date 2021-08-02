@@ -36,9 +36,9 @@ const KidenyDiseaseCalculator = (props) => {
         <React.Fragment>
             <div className="pageHeader-wrapper">
                 <CalculatorHeader
-                    title="Kidney Disease calculator"
-                    children={<KidenyDiseaseInputs addReading={addReading} />}
+                    title="Kidney Disease calculator"                    
                 />
+                <KidenyDiseaseInputs addReading={addReading} />
                 <KidneyDiseaseRecords kidneyDiseaseReadings={kidneyDiseaseReadings} />
             </div>
         </React.Fragment>

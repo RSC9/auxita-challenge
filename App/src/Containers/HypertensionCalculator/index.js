@@ -38,8 +38,8 @@ const HypertensionCalculator = (props) => {
             <div className="pageHeader-wrapper">
                 <CalculatorHeader
                     title="Hypertension calculator"
-                    children={<HypertensionInputs addReading={addReading} />}
                 />
+                <HypertensionInputs addReading={addReading} />
                 <HypertensionRecords hypertensionReadings={hypertensionReadings} />
             </div>
         </React.Fragment>
