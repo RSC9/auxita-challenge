@@ -8,7 +8,6 @@ describe('<HypertensionInputs />', () => {
     const hypertensionInputs = mount(<HypertensionInputs />);
 
     test('Render of HypertensionInputs component', () => {
-
         expect(hypertensionInputs.length).toEqual(1);
     });
 });
