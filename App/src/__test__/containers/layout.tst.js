@@ -8,7 +8,7 @@ import SiderLayout from '../../Containers/Layout';
 describe('<SiderLayout />', () => {
     const siderLayout = mount(<SiderLayout />);
 
-    test('Render of SiderLayout component', () => {
+    test('Render of SiderLayout container', () => {
         expect(siderLayout.length).toEqual(1);
     });
 
