@@ -2,12 +2,18 @@
 import '../../../__mocks__/matchMedia.mock';
 import React from 'react';
 import { mount } from 'enzyme';
-import KidneyDiseaseInputs from '../../../Components/KidneyDisease/kidneyDiseaseInputsWithoutPicker';
+import KidneyDiseaseInputs from '../../../Components/KidneyDisease/kidneyDiseaseInputs';
 
 describe('<KidneyDiseaseInputs />', () => {
-    const kidneyDiseaseInputs = mount(<KidneyDiseaseInputs />);
+    const addReading = jest.fn();
+    const kidneyDiseaseInputs = mount(<KidneyDiseaseInputs addReading={addReading} />);
 
     test('Render of KidneyDiseaseInputs component', () => {
         expect(kidneyDiseaseInputs.length).toEqual(1);
+    });
+
+    test('Check the Add button', () => {
+        kidneyDiseaseInputs.find('button').simulate('click');
+        expect(addReading).toHaveBeenCalledTimes(1);
     });
 });

@@ -8,15 +8,12 @@ const KidenyDiseaseInputsWithoutPicker = (props) => {
     const [eGFR, seteGFR] = useState('');
 
     return (
-        <Form
-            layout="inline"
-            onFinish={() => addReading({ eGFR, atDate })}
-        >
+        <Form layout="inline">
             <Form.Item name="eGFR" label="eGFR" rules={[{ required: true, message: 'Please input a eGFR.' }]}>
                 <InputNumber onChange={(numberValue => seteGFR(numberValue))} />
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" onClick={() => addReading({ eGFR })}>
                     Add
                 </Button>
             </Form.Item>
