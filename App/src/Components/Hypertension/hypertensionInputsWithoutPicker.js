@@ -8,10 +8,7 @@ const HypertensionInputsWithoutPicker = (props) => {
     const [DiaBP, setDiaBP] = useState('');
 
     return (
-        <Form
-            layout="inline"
-            onFinish={() => addReading({ SysBP, DiaBP, atDate })}
-        >
+        <Form layout="inline">
             <Form.Item label="SysBP" name="SysBP" rules={[{ required: true, message: 'Please input a SysBP.' }]}>
                 <InputNumber onChange={(numberValue) => setSysBP(numberValue)} />
             </Form.Item>
@@ -19,7 +16,7 @@ const HypertensionInputsWithoutPicker = (props) => {
                 <InputNumber onChange={(numberValue) => setDiaBP(numberValue)} />
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" onClick={() => addReading({ SysBP, DiaBP })}>
                     Add
                 </Button>
             </Form.Item>

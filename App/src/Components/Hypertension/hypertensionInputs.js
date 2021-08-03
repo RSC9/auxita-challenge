@@ -10,10 +10,7 @@ const HypertensionInputs = (props) => {
     const [atDate, setAtDate] = useState();
 
     return (
-        <Form
-            layout="inline"
-            onFinish={() => addReading({ SysBP, DiaBP, atDate })}
-        >
+        <Form layout="inline">
             <Form.Item label="SysBP" name="SysBP" rules={[{ required: true, message: 'Please input a SysBP.' }]}>
                 <InputNumber onChange={(numberValue) => setSysBP(numberValue)} />
             </Form.Item>
@@ -24,7 +21,7 @@ const HypertensionInputs = (props) => {
                 <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" onClick={() => addReading({ SysBP, DiaBP, atDate })}>
                     Add
                 </Button>
             </Form.Item>

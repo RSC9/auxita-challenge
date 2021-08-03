@@ -13,6 +13,6 @@ describe('<KidneyDiseaseCalculator />', () => {
     });
 
     test('Render of title', () => {
-        expect(kidneyDiseaseCalculator.find(".ant-page-header-heading-title").text()).toEqual("Hypertension calculatorS")
+        expect(kidneyDiseaseCalculator.find(".ant-page-header-heading-title").text()).toEqual("Hypertension calculator");
     });
 });
