@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Statistic } from 'antd';
 import kidneyDiseaseColumns, { consecutiveseGFRColumns } from '../../Shared/Constants/KidneyDisease/kidneyDiseaseColumns';
-import { getTwoConsecutiveItems } from '../../Shared/Util/arrays';
+import { getTwoConsecutiveItems } from '../../Shared/Utils/arrays';
 import { geteGFRPercentChange } from '../../Shared/Helpers/KidneyDisease/classifications';
 
 const { Column } = Table;
