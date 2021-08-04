@@ -12,13 +12,13 @@ const HypertensionInputs = (props) => {
     return (
         <Form layout="inline">
             <Form.Item label="SysBP" name="SysBP" rules={[{ required: true, message: 'Please input a SysBP.' }]}>
-                <InputNumber onChange={(numberValue) => setSysBP(numberValue)} />
+                <InputNumber onChange={(numberValue) => setSysBP(numberValue)} min={1} />
             </Form.Item>
             <Form.Item label="DiaBP" name="DiaBP" rules={[{ required: true, message: 'Please input a DiaBP.' }]}>
-                <InputNumber onChange={(numberValue) => setDiaBP(numberValue)} />
+                <InputNumber onChange={(numberValue) => setDiaBP(numberValue)} min={1} />
             </Form.Item>
             <Form.Item label="Date" name="atDate" rules={[{ required: true, message: 'Please input a Date.' }]}>
-                <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
+                <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} inputReadOnly />
             </Form.Item>
             <Form.Item>
                 <Button type="primary" onClick={() => addReading({ SysBP, DiaBP, atDate })}>

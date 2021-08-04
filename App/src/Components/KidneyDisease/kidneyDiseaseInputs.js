@@ -11,10 +11,10 @@ const KidenyDiseaseInputs = (props) => {
     return (
         <Form layout="inline">
             <Form.Item name="eGFR" label="eGFR" rules={[{ required: true, message: 'Please input a eGFR.' }]}>
-                <InputNumber onChange={(numberValue => seteGFR(numberValue))} />
+                <InputNumber onChange={(numberValue => seteGFR(numberValue))} min={1} />
             </Form.Item>
             <Form.Item label="Date" name="atDate" rules={[{ required: true, message: 'Please input a Date.' }]}>
-                <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} />
+                <DatePicker format={defaultDateFormat} onChange={(momentDate, dateString) => setAtDate(dateString)} inputReadOnly />
             </Form.Item>
             <Form.Item>
                 <Button type="primary" onClick={() => addReading({ eGFR, atDate })}>

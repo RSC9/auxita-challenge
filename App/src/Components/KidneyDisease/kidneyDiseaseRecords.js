@@ -10,6 +10,7 @@ const KidneyDiseaseRecords = (props) => {
     const { kidneyDiseaseReadings } = props;
 
     const expandedRowRender = (initialReading) => {
+        console.log('+VESFLIP+', initialReading);
         const currentItem = kidneyDiseaseReadings.indexOf(initialReading);
         const data = getTwoConsecutiveItems(currentItem, kidneyDiseaseReadings);
 
