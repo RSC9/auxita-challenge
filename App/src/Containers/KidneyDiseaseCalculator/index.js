@@ -4,7 +4,7 @@ import CalculatorHeader from '../../Shared/Components/calculatorHeader';
 import KidenyDiseaseInputs from '../../Components/KidneyDisease/kidneyDiseaseInputs';
 import KidneyDiseaseRecords from '../../Components/KidneyDisease/kidneyDiseaseRecords';
 import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
-import { sortObjectArrayByDate } from '../../Shared/Util/arrays';
+import { sortObjectArrayByDate } from '../../Shared/Utils/arrays';
 
 const KidenyDiseaseCalculator = (props) => {
     const [kidneyDiseaseReadings, setKidneyDiseaseReadings] = React.useState([]);

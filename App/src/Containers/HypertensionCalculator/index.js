@@ -4,7 +4,7 @@ import CalculatorHeader from '../../Shared/Components/calculatorHeader';
 import HypertensionInputs from '../../Components/Hypertension/hypertensionInputs';
 import HypertensionRecords from '../../Components/Hypertension/hypertensionRecords';
 import { getHypertension, addHypertensionReading } from '../../Services/HypertensionService';
-import { sortObjectArrayByDate } from '../../Shared/Util/arrays';
+import { sortObjectArrayByDate } from '../../Shared/Utils/arrays';
 
 const HypertensionCalculator = (props) => {
     const [hypertensionReadings, sethypertensionReadings] = React.useState([]);

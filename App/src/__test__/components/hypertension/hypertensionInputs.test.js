@@ -2,7 +2,7 @@
 import '../../../__mocks__/matchMedia.mock';
 import React from 'react';
 import { mount } from 'enzyme';
-import HypertensionInputs from '../../../Components/Hypertension/hypertensionInputsWithoutPicker';
+import HypertensionInputs from '../../../Components/Hypertension/hypertensionInputs';
 
 describe('<HypertensionInputs />', () => {
     const addReading = jest.fn();
