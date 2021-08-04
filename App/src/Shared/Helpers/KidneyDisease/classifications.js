@@ -34,12 +34,12 @@ export const geteGFRPercentChange = (eGFRInitial, eGFRFinal) => {
         const decrease = eGFRInitial - eGFRFinal;
         const percentage = (decrease / eGFRInitial) * 100;
 
-        return { title: 'Decrease', value: percentage, preffix: <ArrowDownOutlined /> }
+        return { title: 'Decrease', value: parseFloat(percentage.toFixed(2)), preffix: <ArrowDownOutlined /> }
     } else if (eGFRInitial < eGFRFinal) {
         const increase = eGFRFinal - eGFRInitial;
         const percentage = (increase / eGFRInitial) * 100;
         
-        return { title: 'Increase', value: percentage, preffix: <ArrowUpOutlined /> }
+        return { title: 'Increase', value: parseFloat(percentage.toFixed(2)), preffix: <ArrowUpOutlined /> }
     }
 
     return {
