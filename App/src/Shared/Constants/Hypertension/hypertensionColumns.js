@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tag } from 'antd';
-import { classificateBloodPressure } from '../../Helpers/Hypertension/classifications';
+import { classificateBloodPressure } from '../../Helpers/Hypertension/classification';
 
 const columns = [
     {

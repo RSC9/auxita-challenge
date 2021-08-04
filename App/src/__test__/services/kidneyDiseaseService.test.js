@@ -9,7 +9,7 @@ describe('Fetch Kidney Disease', () => {
         fetch.mockResponseOnce(JSON.stringify({ data: [
             { id: 0, eGFR: 65, atDate: '2018/10/31'},
             { id: 1, eGFR: 70, atDate: '2018/10/20'}
-        ] }));
+        ]}));
 
         getKidneyDisease()
         .then((response) => {
