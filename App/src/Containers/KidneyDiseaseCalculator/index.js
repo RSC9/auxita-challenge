@@ -4,7 +4,7 @@ import CalculatorHeader from '../../Shared/Components/calculatorHeader';
 import KidenyDiseaseInputs from '../../Components/KidneyDisease/kidneyDiseaseInputs';
 import KidneyDiseaseRecords from '../../Components/KidneyDisease/kidneyDiseaseRecords';
 import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
-import { sortObjectArrayByDate } from '../../Shared/Utils/arrays';
+import { sortObjectArrayByAscendingDate } from '../../Shared/Utils/arrays';
 
 const KidenyDiseaseCalculator = (props) => {
     const [kidneyDiseaseReadings, setKidneyDiseaseReadings] = React.useState([]);
@@ -16,14 +16,14 @@ const KidenyDiseaseCalculator = (props) => {
 
         };
         const kidneyDisease = [...kidneyDiseaseReadings, await addKidneyDiseaseReading(newReading)];
-        const sortedKidneyDisease = sortObjectArrayByDate(kidneyDisease);
+        const sortedKidneyDisease = sortObjectArrayByAscendingDate(kidneyDisease);
 
         setKidneyDiseaseReadings(sortedKidneyDisease);
     };
 
     async function fetchKidneyDisease() {
         const kidneyDisease = await getKidneyDisease();
-        const sortedKidneyDisease = sortObjectArrayByDate(kidneyDisease);
+        const sortedKidneyDisease = sortObjectArrayByAscendingDate(kidneyDisease);
 
         setKidneyDiseaseReadings(sortedKidneyDisease);
     }

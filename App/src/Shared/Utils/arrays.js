@@ -1,5 +1,5 @@
-export const sortObjectArrayByDate = (array) => {
-    return array.sort((a, b) => new Date(a.atDate) - new Date(b.atDate));
+export const sortObjectArrayByAscendingDate = (objectArray) => {
+    return objectArray.sort((a, b) => new Date(a.atDate) - new Date(b.atDate));
 };
 
 export const getTwoConsecutiveItems = (currentItem, array) => {

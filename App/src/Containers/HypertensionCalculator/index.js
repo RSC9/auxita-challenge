@@ -4,7 +4,7 @@ import CalculatorHeader from '../../Shared/Components/calculatorHeader';
 import HypertensionInputs from '../../Components/Hypertension/hypertensionInputs';
 import HypertensionRecords from '../../Components/Hypertension/hypertensionRecords';
 import { getHypertension, addHypertensionReading } from '../../Services/HypertensionService';
-import { sortObjectArrayByDate } from '../../Shared/Utils/arrays';
+import { sortObjectArrayByAscendingDate } from '../../Shared/Utils/arrays';
 
 const HypertensionCalculator = (props) => {
     const [hypertensionReadings, sethypertensionReadings] = React.useState([]);
@@ -16,14 +16,14 @@ const HypertensionCalculator = (props) => {
             atDate: reading.atDate
         };
         const hypertension = [...hypertensionReadings, await addHypertensionReading(newReading)];
-        const sortedHypertension = sortObjectArrayByDate(hypertension);
+        const sortedHypertension = sortObjectArrayByAscendingDate(hypertension);
 
         sethypertensionReadings(sortedHypertension);
     };
 
     async function fetchHypertension() {
         const hypertension = await getHypertension();
-        const sortedHypertension = sortObjectArrayByDate(hypertension);
+        const sortedHypertension = sortObjectArrayByAscendingDate(hypertension);
 
         sethypertensionReadings(sortedHypertension);
         
