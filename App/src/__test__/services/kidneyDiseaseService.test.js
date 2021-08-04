@@ -1,4 +1,4 @@
-import { getKidneyDisease } from '../../Services/KidneyDiseaseService';
+import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
 
 describe('Fetch Kidney Disease', () => {
     beforeEach(() => {
@@ -20,5 +20,33 @@ describe('Fetch Kidney Disease', () => {
         });
 
         expect(fetch.mock.calls[0][0]).toEqual('/api/kidneyDisease');
+    });
+});
+
+describe('POST Kidney Disease', () => {
+    const newReading = {
+        id: 2,
+        eGFR: 80,
+        atDate: '2018/11/11'
+    };
+
+    beforeEach(() => {
+        fetch.resetMocks();
+    });
+
+    test('Add Kidney Disease record and return data', () => {
+        fetch.mockResponseOnce(JSON.stringify({ data: {
+            id: 2, eGFR: 80, atDate: '2018/11/11'
+        } }));
+
+        addKidneyDiseaseReading(newReading)
+        .then((response) => {
+            console.log('+VESFLIPThanks+', response);
+            expect(response.data).toEqual({
+                id: 2, eGFR: 80, atDate: '2018/11/11'
+            });
+        });
+
+        expect(fetch.mock.calls[0][0]).toEqual('/api/kidneyDisease/add');
     });
 });
