@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Game of life Server",
+  "description": "Auxita Server",
   "main": "index.js",
   "scripts": {
     "test": "jest",

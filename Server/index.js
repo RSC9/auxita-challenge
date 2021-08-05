@@ -6,7 +6,7 @@ const HypertensionDomain = require('./Domain/Hypertension');
 const KidneyDiseaseDomain = require('./Domain/KidneyDisease');
 
 let { hypertension, idHypertension } = HypertensionDomain;
-let { kidneyDisease, idKidneyDisease } =  KidneyDiseaseDomain;
+let { kidneyDisease, idKidneyDisease } = KidneyDiseaseDomain;
 
 app.use(bodyParser.json());
 
