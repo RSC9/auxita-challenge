@@ -36,7 +36,6 @@ app.get('/', (req,res) => {
 
 app.get('/api/kidneyDisease', (req, res) => {
     res.json(kidneyDisease);
-    console.log('+Thanks GOD+', kidneyDisease);
 });
 
 app.post('/api/kidneyDisease/add', (req, res) => {

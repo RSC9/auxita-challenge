@@ -1,6 +1,7 @@
 import { getHypertension, addHypertensionReading } from '../../Services/HypertensionService';
 
 describe('Fetch Hypertension', () => {
+    
     beforeEach(() => {
         fetch.resetMocks();
     });

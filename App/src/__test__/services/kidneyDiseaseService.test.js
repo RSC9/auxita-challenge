@@ -1,6 +1,7 @@
 import { getKidneyDisease, addKidneyDiseaseReading } from '../../Services/KidneyDiseaseService';
 
 describe('Fetch Kidney Disease', () => {
+
     beforeEach(() => {
         fetch.resetMocks();
     });
@@ -41,7 +42,6 @@ describe('POST Kidney Disease', () => {
 
         addKidneyDiseaseReading(newReading)
         .then((response) => {
-            console.log('+VESFLIPThanks+', response);
             expect(response.data).toEqual({
                 id: 2, eGFR: 80, atDate: '2018/11/11'
             });

@@ -6,7 +6,7 @@ import KidneyDiseaseRecords from '../../../Components/KidneyDisease/kidneyDiseas
 describe('<KidneyDiseaseRecords />', () => {
     const kidneyDiseaseRecords = mount(<KidneyDiseaseRecords />);
 
-    test('Render of HypertensionRecords component', () => {
+    test('Render of KidneyDiseaseRecords component', () => {
         expect(kidneyDiseaseRecords.length).toEqual(1);
     });
 });
