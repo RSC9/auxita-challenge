@@ -7,9 +7,11 @@
 ### `npm install`
 ### `npm start`
 #
-
-## Run Server Tests
+## Run Server tests
 ### `npm test`
+#
+## Server coverage
+### `npm run test:coverage`
 #
 
 
@@ -17,4 +19,10 @@
 ### `cd App`
 ### `npm install`
 ### `npm start`
+#
+## Run App tests
+### `npm test`
+#
+## App coverage
+### `npm run test:coverage`
 #

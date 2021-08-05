@@ -4,6 +4,7 @@
   "description": "Auxita challenge",
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "start": "react-scripts start"
   },
