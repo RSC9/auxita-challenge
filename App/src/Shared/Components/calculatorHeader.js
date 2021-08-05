@@ -2,10 +2,12 @@ import React from 'react';
 import { PageHeader } from 'antd';
 
 const CalculatorHeader = (props) => {
-    const { title } = props;
+    const { title, children } = props;
 
     return (
-        <PageHeader title={title} />
+        <PageHeader title={title}>
+           {children} 
+        </PageHeader>
     );
 };
 

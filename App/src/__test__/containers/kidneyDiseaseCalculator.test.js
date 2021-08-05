@@ -1,6 +1,6 @@
 //import 'jsdom-global/register'; //at the top of file , even  , before importing react
 import '../../__mocks__/matchMedia.mock';
-import '../../__mocks__/cancelAnimation.mock';
+//import '../../__mocks__/cancelAnimation.mock';
 import React from 'react';
 import { mount } from 'enzyme';
 import KidneyDiseaseCalculator from '../../Containers/KidneyDiseaseCalculator';
@@ -13,6 +13,6 @@ describe('<KidneyDiseaseCalculator />', () => {
     });
 
     test('Render of title', () => {
-        expect(kidneyDiseaseCalculator.find(".ant-page-header-heading-title").text()).toEqual("Hypertension calculator");
+        expect(kidneyDiseaseCalculator.find(".ant-page-header-heading-title").text()).toEqual("Kidney Disease calculator");
     });
 });

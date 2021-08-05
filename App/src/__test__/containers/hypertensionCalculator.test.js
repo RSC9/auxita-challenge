@@ -1,6 +1,6 @@
-import 'jsdom-global/register'; //at the top of file , even  , before importing react
+//import 'jsdom-global/register'; //at the top of file , even  , before importing react
 import '../../__mocks__/matchMedia.mock';
-import '../../__mocks__/cancelAnimation.mock';
+//import '../../__mocks__/cancelAnimation.mock';
 import React from 'react';
 import { mount } from 'enzyme';
 import HypertensionCalculator from '../../Containers/HypertensionCalculator';
@@ -10,5 +10,9 @@ describe('<HypertensionCalculator />', () => {
 
     test('Render of HypertensionCalculator container', () => {
         expect(hypertensionCalculator.length).toEqual(1);
+    });
+
+    test('Render of title', () => {
+        expect(hypertensionCalculator.find(".ant-page-header-heading-title").text()).toEqual("Hypertension calculator");
     });
 });
